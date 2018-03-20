@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Style from '../css/main.css';
+import styled from 'styled-components';
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'));
+const Hello = styled.div`
+    color: red;
+`;
+
+ReactDOM.render(<Hello>Hello World</Hello>, document.getElementById('root'));
