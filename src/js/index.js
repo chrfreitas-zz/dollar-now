@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import baseCss from './ui/base';
 import { blue } from './ui/colors';
 import BaseCurrency from '../js/components/BaseCurrency/BaseCurrency';
-import Currencies from '../js/components/currencies/currencies';
+import CarouselCurrencies from '../js/components/CarouselCurrencies/CarouselCurrencies';
 
 const ConstainerStyled = styled.div`
     width: 100%;
@@ -22,7 +22,7 @@ class Container extends Component {
         return (
             <ConstainerStyled>
                 <BaseCurrency>USD</BaseCurrency>
-                <Currencies />
+                <CarouselCurrencies />
             </ConstainerStyled>
         )
     }

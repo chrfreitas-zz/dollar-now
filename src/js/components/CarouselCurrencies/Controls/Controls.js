@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { ButtonStyled } from '../../ui/button';
+import { ButtonStyled } from '../../../ui/button';
 
 const Constrols = styled.div`
     position: absolute;
@@ -34,5 +35,8 @@ class Controls extends Component {
     }
 }
 
+Controls.propTypes = {
+    handleChangeCurrency: PropTypes.func
+}
 
 export default Controls;
