@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import baseCss from './ui/base';
 import { blue } from './ui/colors';
-import BaseCurrency from '../js/components/baseCurrency/baseCurrency';
+import BaseCurrency from '../js/components/BaseCurrency/BaseCurrency';
 import Currencies from '../js/components/currencies/currencies';
 
 const ConstainerStyled = styled.div`
