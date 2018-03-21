@@ -7,5 +7,6 @@ injectGlobal`
         margin: 0;
         padding: 0;
         height: 100%;
+        font-family: 'Lato', sans-serif;
     }
 `
