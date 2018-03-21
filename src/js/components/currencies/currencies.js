@@ -6,6 +6,13 @@ import { ButtonStyled } from '../../ui/button';
 
 const Container = styled.div`
     position: relative;
+    width: 330px;
+    height: 75px;
+`;
+
+const CurrenciesContainer = styled.div`
+    position: absolute;
+    top: 0;
 `;
 
 const Item = styled.div`
@@ -24,9 +31,6 @@ const Item = styled.div`
 
 const CurrencyCode = styled.div`
     margin: 0 30px 0 0;
-`;
-
-const CurrencyValue = styled.div`
 `;
 
 const Constrols = styled.div`
@@ -62,7 +66,8 @@ class Currencies extends Component {
                     value: '0,95',
                     active: false
                 }
-            ]
+            ],
+            activePosition: -75
         }
     }
 
@@ -70,15 +75,13 @@ class Currencies extends Component {
         return this.state.currencies.map((item, index) => (
             <Item className={ item.active ? 'active': '' } key={index}>
                 <CurrencyCode>{ item.code }</CurrencyCode>
-                <CurrencyValue>{ item.value }</CurrencyValue>
+                <div>{ item.value }</div>
             </Item>
         ));
     }
 
     handleChangeCurrency(to) {
         const indexActive = this.state.currencies.findIndex(item => item.active);
-
-        console.log(indexActive)
 
         this.setState(prevState => ({
             currencies: prevState.currencies.map((item, index) => {
@@ -89,16 +92,17 @@ class Currencies extends Component {
                 }
 
                 return item;
-            })
+            }),
+            activePosition: (Math.sign(to) === -1) ? prevState.activePosition + 55 : prevState.activePosition - 55
         }));
     }
 
     render() {
         return (
             <Container>
-                <div className="currencies">
+                <CurrenciesContainer style={ {'top': this.state.activePosition} }>
                     { this.renderList() }
-                </div>
+                </CurrenciesContainer>
                 <Constrols>
                     <ButtonDirections onClick={() => this.handleChangeCurrency(-1)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 64 64"><path fill="#FFF" d="M3.352 48.296l28.56-28.328 28.58 28.347c.397.394.917.59 1.436.59.52 0 1.04-.196 1.436-.59a2.003 2.003 0 0 0 0-2.849l-29.98-29.735c-.2-.2-.494-.375-.757-.475a2.052 2.052 0 0 0-2.166.456L.479 45.447a2.003 2.003 0 0 0 0 2.849 2.045 2.045 0 0 0 2.873 0z"/></svg>
