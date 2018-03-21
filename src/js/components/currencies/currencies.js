@@ -45,36 +45,46 @@ const ButtonPrevious = styled.button`
 class Currencies extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            currencies: [
+                {
+                    code: 'EUR',
+                    value: '1,18',
+                    active: false
+                },
+                {
+                    code: 'BRL',
+                    value: '3,25',
+                    active: true
+                },
+                {
+                    code: 'CAD',
+                    value: '0,95',
+                    active: false
+                }
+            ]
+        }
+    }
+
+    renderList() {
+        return this.state.currencies.map((item, index) => (
+            <Item className={ item.active ? 'active': '' } key={index}>
+                <CurrencyCode>
+                    { item.code }
+                </CurrencyCode>
+                <CurrencyValue>
+                    { item.value }
+                </CurrencyValue>
+            </Item>
+        ));
     }
 
     render() {
         return (
             <Container>
                 <Curriencies>
-                    <Item>
-                        <CurrencyCode>
-                            EUR
-                        </CurrencyCode>
-                        <CurrencyValue>
-                            1,18
-                        </CurrencyValue>
-                    </Item>
-                    <Item className="active">
-                        <CurrencyCode>
-                            BRL
-                        </CurrencyCode>
-                        <CurrencyValue>
-                            3,25
-                        </CurrencyValue>
-                    </Item>
-                    <Item>
-                        <CurrencyCode>
-                            CAD
-                        </CurrencyCode>
-                        <CurrencyValue>
-                            0,95
-                        </CurrencyValue>
-                    </Item>
+                    { this.renderList() }
                 </Curriencies>
                 <Constrols>
                     <ButtonNext>Next</ButtonNext>
