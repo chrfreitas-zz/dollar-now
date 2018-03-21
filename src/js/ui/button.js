@@ -9,6 +9,7 @@ const ButtonStyled = styled.button`
     color: #fff;
     padding: 5px 30px;
     text-transform: uppercase;
+    cursor: pointer;
 `;
 
 class Button extends Component {
