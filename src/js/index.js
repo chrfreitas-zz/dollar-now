@@ -1,21 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { injectGlobal } from 'styled-components';
+import styled from 'styled-components';
 
-import Container from './components/container/container';
+import baseCss from './ui/base';
+import { blue } from './ui/colors';
+import Button from './ui/button';
 
-injectGlobal`
-    html,
-    body,
-    #root {
-        margin: 0;
-        padding: 0;
-        height: 100%;
+const ConstainerStyled = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: ${blue};
+    align-items: center;
+    color: #fff;
+`;
+
+class Container extends Component {
+    render() {
+        return (
+            <ConstainerStyled>
+                <Button>USD</Button>
+            </ConstainerStyled>
+        )
     }
-`
+}
 
-const App = (
-    <Container>Hello World</Container>
-);
-
-ReactDOM.render(App, document.getElementById('root'));
+ReactDOM.render(<Container />, document.getElementById('root'));
