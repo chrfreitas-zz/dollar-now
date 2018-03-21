@@ -18,4 +18,4 @@ const App = (
     <Container>Hello World</Container>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(App, document.getElementById('root'));
