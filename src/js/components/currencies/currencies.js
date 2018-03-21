@@ -13,6 +13,9 @@ const Container = styled.div`
 const CurrenciesContainer = styled.div`
     position: absolute;
     top: 0;
+    transition: top .4s;
+    transform: translateX(-50%);
+    left: 50%;
 `;
 
 const Item = styled.div`
@@ -26,6 +29,7 @@ const Item = styled.div`
     &.active {
         font-size: 60px
         opacity: 1;
+        transition: opacity .3s, font-size .3s;
     }
 `;
 
