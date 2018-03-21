@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         vendor: ['react', 'react-dom'],
-        app: './src/js/App.js',
+        app: './src/js/index.js',
     },
     output: {
         path:__dirname + '/public',
