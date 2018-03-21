@@ -29,4 +29,4 @@ Button.propTypes = {
     children: PropTypes.any
 }
 
-export default Button;
+export { Button, ButtonStyled}

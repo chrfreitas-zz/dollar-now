@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Button from '../../ui/button';
+import { ButtonStyled } from '../../ui/button';
+
+const BaseCurrencyStyled = ButtonStyled.extend`
+    position: absolute;
+    top: 40px;
+    right: 50px;
+`;
 
 class BaseCurrency extends Component {
     constructor(props) {
@@ -11,9 +17,9 @@ class BaseCurrency extends Component {
 
     render() {
         return (
-            <Button>
+            <BaseCurrencyStyled>
                 { this.props.children }
-            </ Button>
+            </BaseCurrencyStyled>
         )
     }
 }
