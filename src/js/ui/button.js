@@ -10,6 +10,10 @@ const ButtonStyled = styled.button`
     padding: 5px 30px;
     text-transform: uppercase;
     cursor: pointer;
+
+    &:disabled {
+        opacity: .2;
+    }
 `;
 
 class Button extends Component {

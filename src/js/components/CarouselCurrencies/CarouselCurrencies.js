@@ -29,13 +29,17 @@ class CarouselCurrencies extends Component {
                 active: false
             }
         ],
-        activePosition: -75
+        activePosition: -75,
+        buttonUpDisabled: false,
+        buttonDownDisabled: false
     }
 
     handleChangeCurrency = (moveIndex) => {
         this.setState(prevState => ({
             currencies: this.changeActiveItem(moveIndex, prevState.currencies),
-            activePosition: this.changePosition(moveIndex, prevState.activePosition)
+            activePosition: this.changePosition(moveIndex, prevState.activePosition),
+            buttonUpDisabled: this.isButtonUpDisabled(moveIndex,prevState.currencies),
+            buttonDownDisabled: this.isButtonDownDisabled(moveIndex,prevState.currencies),
         }));
     }
 
@@ -65,11 +69,25 @@ class CarouselCurrencies extends Component {
         return currentPosition - 55
     }
 
+    isButtonUpDisabled(moveIndex, currencies) {
+        const currentIndexActive = currencies.findIndex(item => item.active);
+        return (currentIndexActive + moveIndex) < 0;
+    }
+
+    isButtonDownDisabled(moveIndex, currencies) {
+        const currentIndexActive = currencies.findIndex(item => item.active);
+        return (currentIndexActive + moveIndex) === currencies.length;
+    }
+
     render() {
         return (
             <Container>
-                <Items currencies={this.state.currencies} activePosition={this.state.activePosition}/>
-                <Controls handleChangeCurrency={this.handleChangeCurrency} />
+                <Items currencies={this.state.currencies}
+                       activePosition={this.state.activePosition}/>
+
+                <Controls handleChangeCurrency={this.handleChangeCurrency}
+                          buttonUpDisabled={this.state.buttonUpDisabled}
+                          buttonDownDisabled={this.state.buttonDownDisabled} />
             </Container>
         )
     }
