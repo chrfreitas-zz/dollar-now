@@ -17,7 +17,7 @@ const ButtonDirections = ButtonStyled.extend`
 `;
 
 class Controls extends Component {
-    propTypes = {
+    static propTypes = {
         handleChangeCurrency: PropTypes.func
     }
 

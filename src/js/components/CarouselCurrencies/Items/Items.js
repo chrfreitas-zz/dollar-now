@@ -30,7 +30,7 @@ const CurrencyCode = styled.div`
 `;
 
 class Items extends Component {
-    propTypes = {
+    static propTypes = {
         currencies: PropTypes.array,
         activePosition: PropTypes.number
     }
