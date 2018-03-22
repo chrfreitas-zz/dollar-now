@@ -11,32 +11,28 @@ const Container = styled.div`
 `;
 
 class CarouselCurrencies extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            currencies: [
-                {
-                    code: 'EUR',
-                    value: '1,18',
-                    active: false
-                },
-                {
-                    code: 'BRL',
-                    value: '3,25',
-                    active: true
-                },
-                {
-                    code: 'CAD',
-                    value: '0,95',
-                    active: false
-                }
-            ],
-            activePosition: -75
-        }
+    state = {
+        currencies: [
+            {
+                code: 'EUR',
+                value: '1,18',
+                active: false
+            },
+            {
+                code: 'BRL',
+                value: '3,25',
+                active: true
+            },
+            {
+                code: 'CAD',
+                value: '0,95',
+                active: false
+            }
+        ],
+        activePosition: -75
     }
 
-    handleChangeCurrency(to) {
+    handleChangeCurrency = (to) => {
         const indexActive = this.state.currencies.findIndex(item => item.active);
 
         this.setState(prevState => ({

@@ -30,8 +30,9 @@ const CurrencyCode = styled.div`
 `;
 
 class Items extends Component {
-    constructor(props) {
-        super(props);
+    propTypes = {
+        currencies: PropTypes.array,
+        activePosition: PropTypes.number
     }
 
     renderList() {
@@ -50,11 +51,6 @@ class Items extends Component {
             </ItemsContainer>
         )
     }
-}
-
-Items.propTypes = {
-    currencies: PropTypes.array,
-    activePosition: PropTypes.number
 }
 
 export default Items;

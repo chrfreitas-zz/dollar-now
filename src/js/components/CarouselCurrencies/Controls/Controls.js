@@ -17,8 +17,8 @@ const ButtonDirections = ButtonStyled.extend`
 `;
 
 class Controls extends Component {
-    constructor(props) {
-        super(props);
+    propTypes = {
+        handleChangeCurrency: PropTypes.func
     }
 
     render() {
@@ -33,10 +33,6 @@ class Controls extends Component {
             </Constrols>
         )
     }
-}
-
-Controls.propTypes = {
-    handleChangeCurrency: PropTypes.func
 }
 
 export default Controls;
