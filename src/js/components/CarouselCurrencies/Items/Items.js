@@ -35,9 +35,21 @@ class Items extends Component {
         activePosition: PropTypes.number
     }
 
+    getClassActive(item) {
+        if(item.active){
+            return 'active';
+        }
+    }
+
+    getStylePositionActive() {
+        return {
+            'top': this.props.activePosition
+        }
+    }
+
     renderList() {
         return this.props.currencies.map((item, index) => (
-            <Item className={ item.active ? 'active': '' } key={index}>
+            <Item className={ this.getClassActive(item) } key={  index}>
                 <CurrencyCode>{ item.code }</CurrencyCode>
                 <div>{ item.value }</div>
             </Item>
@@ -46,7 +58,7 @@ class Items extends Component {
 
     render() {
         return (
-            <ItemsContainer style={ {'top': this.props.activePosition} }>
+            <ItemsContainer style={ this.getStylePositionActive() }>
                 { this.renderList() }
             </ItemsContainer>
         )

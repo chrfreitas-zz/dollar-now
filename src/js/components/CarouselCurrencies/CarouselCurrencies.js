@@ -32,21 +32,37 @@ class CarouselCurrencies extends Component {
         activePosition: -75
     }
 
-    handleChangeCurrency = (to) => {
-        const indexActive = this.state.currencies.findIndex(item => item.active);
-
+    handleChangeCurrency = (moviment) => {
         this.setState(prevState => ({
-            currencies: prevState.currencies.map((item, index) => {
-                item.active = false;
-
-                if((indexActive + to)  === index){
-                    item.active = true
-                }
-
-                return item;
-            }),
-            activePosition: (Math.sign(to) === -1) ? prevState.activePosition + 55 : prevState.activePosition - 55
+            currencies: this.changeActiveItem(moviment, prevState.currencies),
+            activePosition: this.changePosition(moviment, prevState.activePosition)
         }));
+    }
+
+    changeActiveItem(moviment, currencies){
+        const currentIndexActive = currencies.findIndex(item => item.active);
+
+        return currencies.map((item, index) => {
+            const nextIndexActive = currentIndexActive + moviment;
+
+            item.active = false;
+
+            if(nextIndexActive === index){
+                item.active = true
+            }
+
+            return item;
+        })
+    }
+
+    changePosition(moviment, currentPosition) {
+        const toDown = Math.sign(moviment);
+
+        if (toDown === -1) {
+            return currentPosition + 55;
+        }
+
+        return currentPosition - 55
     }
 
     render() {

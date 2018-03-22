@@ -11,8 +11,8 @@ const BaseCurrencyStyled = ButtonStyled.extend`
 `;
 
 class BaseCurrency extends Component {
-    constructor(props) {
-        super(props);
+    static propTypes = {
+        children: PropTypes.any
     }
 
     render() {
@@ -22,10 +22,6 @@ class BaseCurrency extends Component {
             </BaseCurrencyStyled>
         )
     }
-}
-
-BaseCurrency.propTypes = {
-    children: PropTypes.any
 }
 
 export default BaseCurrency;

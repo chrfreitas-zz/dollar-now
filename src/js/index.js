@@ -21,7 +21,7 @@ class Container extends Component {
     render() {
         return (
             <ConstainerStyled>
-                <BaseCurrency>USD</BaseCurrency>
+                <BaseCurrency>1 USD</BaseCurrency>
                 <CarouselCurrencies />
             </ConstainerStyled>
         )
