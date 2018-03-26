@@ -11,18 +11,18 @@ beforeAll(() => {
 
 describe('Button', () => {
     it('should return true', () => {
-        const ButtonWrapper = shallow(<Button>Hi!</Button>);
-        expect(ButtonWrapper.exists()).toBeTruthy();
+        const wrapper = shallow(<Button>Hi!</Button>);
+        expect(wrapper.exists()).toBeTruthy();
     });
 
     it('should return Hi! when pass like children', () => {
-        const ButtonWrapper = shallow(<Button>Hi!</Button>);
-        expect(ButtonWrapper.prop('children')).toBe("Hi!");
+        const wrapper = shallow(<Button>Hi!</Button>);
+        expect(wrapper.prop('children')).toBe("Hi!");
     });
 
     it('should match with snapshot', () => {
-        const ButtonSnapshot = renderer.create(<Button>Hi!</Button>);
-        expect(ButtonSnapshot).toMatchSnapshot();
+        const snapshot = renderer.create(<Button>Hi!</Button>);
+        expect(snapshot).toMatchSnapshot();
     })
 })
 

@@ -11,13 +11,13 @@ beforeAll(() => {
 
 describe('BaseCurrency', () => {
     it('should return true', () => {
-        const BaseCurrencyWrapper = shallow(<BaseCurrency/>);
-        expect(BaseCurrencyWrapper.exists()).toBeTruthy();
+        const wrapper = shallow(<BaseCurrency/>);
+        expect(wrapper.exists()).toBeTruthy();
     });
 
     it('should match with snapshot', () => {
-        const BaseCurrencySnapshot = renderer.create(<BaseCurrency>1 USD</BaseCurrency>).toJSON();
-        expect(BaseCurrencySnapshot).toMatchSnapshot();
+        const snapshot = renderer.create(<BaseCurrency>1 USD</BaseCurrency>).toJSON();
+        expect(snapshot).toMatchSnapshot();
     });
 })
 

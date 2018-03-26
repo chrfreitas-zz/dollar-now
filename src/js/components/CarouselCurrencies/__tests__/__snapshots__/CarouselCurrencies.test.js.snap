@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarouselCurrencies should match with snapshot 1`] = `
+<div
+  className="sc-bZQynM jicYgv"
+>
+  <div
+    className="sc-bxivhb enRaSl"
+    style={
+      Object {
+        "top": -75,
+      }
+    }
+  >
+    <div
+      className="sc-ifAKCX hepNmx"
+    >
+      <div
+        className="sc-EHOje clTNRt"
+      >
+        EUR
+      </div>
+      <div>
+        1,18
+      </div>
+    </div>
+    <div
+      className="active sc-ifAKCX hepNmx"
+    >
+      <div
+        className="sc-EHOje clTNRt"
+      >
+        BRL
+      </div>
+      <div>
+        3,25
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX hepNmx"
+    >
+      <div
+        className="sc-EHOje clTNRt"
+      >
+        CAD
+      </div>
+      <div>
+        0,95
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-bwzfXH eRJyyo"
+  >
+    <button
+      className="sc-htpNat ZEJQa"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        height="20"
+        viewBox="0 0 64 64"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.352 48.296l28.56-28.328 28.58 28.347c.397.394.917.59 1.436.59.52 0 1.04-.196 1.436-.59a2.003 2.003 0 0 0 0-2.849l-29.98-29.735c-.2-.2-.494-.375-.757-.475a2.052 2.052 0 0 0-2.166.456L.479 45.447a2.003 2.003 0 0 0 0 2.849 2.045 2.045 0 0 0 2.873 0z"
+          fill="#FFF"
+        />
+      </svg>
+    </button>
+    <button
+      className="sc-htpNat ZEJQa"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        height="20"
+        viewBox="0 0 64 64"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M60.533 15.733l-28.56 28.328L3.394 15.713c-.397-.394-.917-.59-1.437-.59s-1.039.196-1.436.59a2.003 2.003 0 0 0 0 2.849l29.98 29.735c.2.2.494.375.757.476.75.282 1.597.107 2.166-.456l29.981-29.735a2.003 2.003 0 0 0 0-2.849 2.044 2.044 0 0 0-2.872 0z"
+          fill="#FFF"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
