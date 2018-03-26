@@ -6,18 +6,18 @@ import renderer from 'react-test-renderer';
 import BaseCurrency from './../BaseCurrency';
 
 beforeAll(() => {
-    Enzyme.configure({ adapter: new Adapter() })
+    Enzyme.configure({ adapter: new Adapter() });
 });
 
 describe('BaseCurrency', () => {
     it('should return true', () => {
-        const BaseCurrencyTest = shallow(<BaseCurrency/>);
-        expect(BaseCurrencyTest.exists()).toBeTruthy();
+        const BaseCurrencyWrapper = shallow(<BaseCurrency/>);
+        expect(BaseCurrencyWrapper.exists()).toBeTruthy();
     });
 
     it('should to match with snapshot', () => {
-        const BaseCurrencyTest = renderer.create(<BaseCurrency>1 USD</BaseCurrency>).toJSON();
-        expect(BaseCurrencyTest).toMatchSnapshot();
+        const BaseCurrencySnapshot = renderer.create(<BaseCurrency>1 USD</BaseCurrency>).toJSON();
+        expect(BaseCurrencySnapshot).toMatchSnapshot();
     });
 })
 

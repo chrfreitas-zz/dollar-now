@@ -17,8 +17,8 @@ const ButtonStyled = styled.button`
 `;
 
 class Button extends Component {
-    constructor(props) {
-        super(props);
+    static propTypes = {
+        children: PropTypes.any
     }
 
     render() {
@@ -30,8 +30,4 @@ class Button extends Component {
     }
 }
 
-Button.propTypes = {
-    children: PropTypes.any
-}
-
-export { Button, ButtonStyled}
+export { Button, ButtonStyled }
