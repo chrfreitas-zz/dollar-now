@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BaseCurrency should to match with snapshot 1`] = `
+exports[`BaseCurrency should match with snapshot 1`] = `
 <button
   className="sc-bwzfXH dcEJXz"
 >

@@ -15,7 +15,7 @@ describe('BaseCurrency', () => {
         expect(BaseCurrencyWrapper.exists()).toBeTruthy();
     });
 
-    it('should to match with snapshot', () => {
+    it('should match with snapshot', () => {
         const BaseCurrencySnapshot = renderer.create(<BaseCurrency>1 USD</BaseCurrency>).toJSON();
         expect(BaseCurrencySnapshot).toMatchSnapshot();
     });

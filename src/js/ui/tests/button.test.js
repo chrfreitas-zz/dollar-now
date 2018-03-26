@@ -19,6 +19,11 @@ describe('Button', () => {
         const ButtonWrapper = shallow(<Button>Hi!</Button>);
         expect(ButtonWrapper.prop('children')).toBe("Hi!");
     });
+
+    it('should match with snapshot', () => {
+        const ButtonSnapshot = renderer.create(<Button>Hi!</Button>);
+        expect(ButtonSnapshot).toMatchSnapshot();
+    })
 })
 
 
